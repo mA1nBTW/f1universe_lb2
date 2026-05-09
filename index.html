@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="F1 Universe — україномовний фан-сайт Формули 1.">
+    <meta name="author" content="Павленко М. Б.">
+    <meta name="keywords" content="Формула 1, F1, Гран-прі, пілоти, розклад, Ферстаппен">
+    <meta name="robots" content="index, follow">
+    <title>F1 Universe — Головна</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+</head>
+
+<body>
+
+    <!-- шапка -->
+    <header class="header" id="top">
+        <div class="container header__inner">
+            <div class="header__logo">
+                <a class="header__logo-link" href="index.html">F1 <span class="accent">Universe</span></a>
+            </div>
+            <nav class="header__nav">
+                <input type="checkbox" id="menu-toggle" class="header__menu-toggle">
+                <label for="menu-toggle" class="header__menu-btn">
+                    <span class="header__menu-icon"></span>
+                </label>
+
+                <ul class="nav__list">
+                    <li class="nav__item nav__item_active"><a class="nav__link" href="index.html">Головна</a></li>
+                    <li class="nav__item nav__item_dropdown">
+                        <a class="nav__link" href="#">Новини ▾</a>
+                        <ul class="nav__dropdown">
+                            <li class="nav__dropdown-item"><a class="nav__dropdown-link" href="#news">Останні новини</a></li>
+                            <li class="nav__dropdown-item"><a class="nav__dropdown-link" href="#champ">Чемпіонат</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav__item"><a class="nav__link" href="drivers.html">Пілоти</a></li>
+                    <li class="nav__item"><a class="nav__link" href="schedule.html">Розклад</a></li>
+                    <li class="nav__item"><a class="nav__link" href="schedule.html#contacts">Контакти</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- основний вміст -->
+    <main>
+
+        <!-- hero секція -->
+        <section id="hero" class="hero">
+            <div class="container">
+                <p class="hero__label">⚡ Наступна гонка</p>
+                <h1 class="hero__title">Гран-прі <span class="accent">Монако</span></h1>
+                <p class="hero__subtitle">Траса: Circuit de Monaco &nbsp;·&nbsp; 25 травня 2026</p>
+
+                <div class="clock clock_hero">
+                    <div class="clock__face">
+                        <div class="clock__hand clock__hand_hour"></div>
+                        <div class="clock__hand clock__hand_minute"></div>
+                        <div class="clock__hand clock__hand_second"></div>
+                        <div class="clock__center"></div>
+                    </div>
+                </div>
+
+                <br>
+                <img src="img/monacogp2026.jpg" alt="Траса Монако" width="600" height="300" class="hero__image">
+            </div>
+        </section>
+
+        <!-- новини -->
+        <section id="news" class="section">
+            <div class="container">
+                <h2 class="section__title">Останні <span class="accent">Новини</span></h2>
+
+                <div class="card-grid">
+                    <article class="card">
+                        <img class="card__image" src="img/rb22.jpg" alt="Red Bull Racing" width="300" height="160">
+                        <div class="card__body">
+                            <h3 class="card__title">Red Bull Racing представили пакет оновлень</h3>
+                            <p class="card__text">Команда привезла аеродинамічні оновлення для вуличних трас.</p>
+                            <a class="card__link" href="https://www.formula1.com" target="_blank">Читати далі →</a>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img class="card__image" src="img/news_leclerc_speaking.jpg" alt="Ferrari на трасі" width="300" height="160">
+                        <div class="card__body">
+                            <h3 class="card__title">Леклер: «Монако — особлива гонка»</h3>
+                            <p class="card__text">У минулому році він фінішував на 2-му місці та набрав 18 очок.</p>
+                            <a class="card__link" href="drivers.html">Читати далі →</a>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img class="card__image" src="img/mcl40.jpg" alt="McLaren болід" width="300" height="160">
+                        <div class="card__body">
+                            <h3 class="card__title">McLaren — претендент на перше місце?</h3>
+                            <p class="card__text">Швидкість на першому секторі вражає: +0.2 секунди до суперників.</p>
+                            <a class="card__link" href="#champ">До чемпіонату →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- чемпіонат + aside -->
+        <section id="champ" class="section section_theme_dark">
+            <div class="container layout layout_columns_main-sidebar">
+                <h2 class="section__title">Лідери <span class="accent">Чемпіонату 2026</span>
+                </h2>
+
+                <!-- таблиця зліва, сайдбар справа -->
+                <div class="layout__main">
+                    <h4 class="champ__subtitle">Таблиця пілотів</h4>
+                    <table class="data-table">
+                        <thead>
+                            <tr class="data-table__head-row">
+                                <th class="data-table__th">#</th>
+                                <th class="data-table__th">Пілот</th>
+                                <th class="data-table__th">Команда</th>
+                                <th class="data-table__th">Очки</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="data-table__row">
+                                <td class="data-table__td">1</td>
+                                <td class="data-table__td"><strong>Кімі Антонеллі</strong></td>
+                                <td class="data-table__td">Mercedes</td>
+                                <td class="data-table__td"><strong>72</strong></td>
+                            </tr>
+                            <tr class="data-table__row">
+                                <td class="data-table__td">2</td>
+                                <td class="data-table__td">Джордж Расселл</td>
+                                <td class="data-table__td">Mercedes</td>
+                                <td class="data-table__td">63</td>
+                            </tr>
+                            <tr class="data-table__row">
+                                <td class="data-table__td">3</td>
+                                <td class="data-table__td">Шарль Леклер</td>
+                                <td class="data-table__td">Ferrari</td>
+                                <td class="data-table__td">49</td>
+                            </tr>
+                            <tr class="data-table__row">
+                                <td class="data-table__td">4</td>
+                                <td class="data-table__td">Льюїс Гамільтон</td>
+                                <td class="data-table__td">Ferrari</td>
+                                <td class="data-table__td">41</td>
+                            </tr>
+                            <tr class="data-table__row">
+                                <td class="data-table__td">5</td>
+                                <td class="data-table__td">Ландо Норріс</td>
+                                <td class="data-table__td">McLaren</td>
+                                <td class="data-table__td">25</td>
+                            </tr>
+                            <tr class="data-table__row">
+                                <td class="data-table__td">6</td>
+                                <td class="data-table__td">Оскар Піастрі</td>
+                                <td class="data-table__td">McLaren</td>
+                                <td class="data-table__td">21</td>
+                            </tr>
+                            <tr class="data-table__row">
+                                <td class="data-table__td">7</td>
+                                <td class="data-table__td">Олівер Берман</td>
+                                <td class="data-table__td">Haas</td>
+                                <td class="data-table__td">17</td>
+                            </tr>
+                            <tr class="data-table__row">
+                                <td class="data-table__td">8</td>
+                                <td class="data-table__td">П'єр Гаслі</td>
+                                <td class="data-table__td">Alpine</td>
+                                <td class="data-table__td">15</td>
+                            </tr>
+                            <tr class="data-table__row">
+                                <td class="data-table__td">9</td>
+                                <td class="data-table__td">Макс Ферстаппен</td>
+                                <td class="data-table__td">Red Bull Racing</td>
+                                <td class="data-table__td">12</td>
+                            </tr>
+                            <tr class="data-table__row">
+                                <td class="data-table__td">10</td>
+                                <td class="data-table__td">Ліам Лоусон</td>
+                                <td class="data-table__td">Racing Bulls</td>
+                                <td class="data-table__td">10</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <aside class="layout__sidebar sidebar">
+                    <h5 class="sidebar__title">
+                        Навігація по сторінці</h5>
+                    <ul class="sidebar__list">
+                        <li class="sidebar__item"><a class="sidebar__link" href="#top">↑ Початок сторінки</a></li>
+                        <li class="sidebar__item"><a class="sidebar__link" href="#news">📰 Новини</a></li>
+                        <li class="sidebar__item"><a class="sidebar__link" href="#media">🎬 Медіа</a></li>
+                    </ul>
+                    <h6 class="sidebar__note">* Дані станом на квітень 2026</h6>
+                </aside>
+                <div class="grid-hidden"></div>
+            </div>
+        </section>
+
+        <!-- медіа -->
+        <section id="media" class="section">
+            <div class="container media-layout">
+                <h2 class="section__title">Медіа <span class="accent">F1 Universe</span></h2>
+
+                <!-- відео і аудіо поруч -->
+                <div class="media-box">
+                    <h3 class="media-box__title">🎬 Куди перейде Макс Ферстаппен?</h3>
+                    <br class="grid-hidden">
+                    <video class="media-box__video" width="100%" height="640" controls>
+                        <source src="video/Куди піде Макс Ферстаппен у Формула 1.mp4" type="video/mp4">
+                        Ваш браузер не підтримує відтворення відео.
+                    </video>
+                </div>
+                <div class="media-box">
+                    <h3 class="media-box__title">🎙 Подкаст: Новий бос команди Ред Бул про себе. Англійською</h3>
+                    <br class="grid-hidden">
+                    <audio class="media-box__audio" controls>
+                        <source src="audio/laurent-mekies-relishing-red-bull-challenge.mp3" type="audio/mpeg">
+                        Ваш браузер не підтримує аудіо.
+                    </audio>
+                </div>
+
+                <br class="grid-hidden"><br class="grid-hidden">
+                <!-- iframe YouTube -->
+                <div class="video-wrapper">
+                    <h3 class="video-wrapper__title">🏁 Найвеселіші моменти Ф1 (YouTube)</h3>
+                    <iframe 
+                        class="video-wrapper__iframe"
+                        width="100%" 
+                        height="600" 
+                        src="https://www.youtube.com/embed/miixnqPhUvE?rel=0&modestbranding=1" 
+                        title="F1 Best Moments" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- підвал -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__col">
+                <p class="footer__brand"><strong>F1 <span class="accent">Universe</span></strong></p>
+                <address class="footer__address">
+                    <a class="footer__address-link" href="mailto:contact@f1universe.ua">contact@f1universe.ua</a><br>
+                    <a class="footer__address-link" href="tel:+380501234567">+38 (050) 123-45-67</a><br>
+                    м. Харків, Україна
+                </address>
+            </div>
+            <div class="footer__col">
+                <p class="footer__info">Лабораторна робота №1<br>
+                    <em>Гіпертекст та гіпермедіа</em><br>
+                    ХНУРЕ, 2026<br>
+                    Виконав: <strong>Павленко М. Б.</strong>
+                </p>
+            </div>
+            <br class="grid-hidden">
+            <p class="footer__bottom">
+                © 2026 F1 Universe. <a class="footer__bottom-link" href="#top">↑ Вгору</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
