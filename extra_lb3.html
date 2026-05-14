@@ -20,7 +20,7 @@
 
   <div class="controls">
     <label>Текст:</label>
-    <input type="text" id="t1-text" value="Привіт, світ!">
+    <input type="text" id="t1-text" value="Hello, World!">
     <label>Розмір (px):</label>
     <input type="number" id="t1-size" value="24" min="8" max="80" style="width:90px">
     <button onclick="showText()">Показати</button>
@@ -228,6 +228,163 @@
     currentOpacity = 1;
     document.getElementById('fade-box').style.opacity = 1;
     document.getElementById('fade-progress').textContent = 'opacity: 1.00';
+  }
+</script>
+
+<h2 style="text-align: center; margin-top: 40px;">ЛР №3 — Блок 2</h2>
+
+<!-- Блок 2 завдання 1 -->
+<div class="task">
+  <div class="task-header">
+    <span class="task-num">03</span>
+    <span class="task-title">Список кольорів та чорний квадрат</span>
+  </div>
+
+  <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+    
+    <div>
+      <label>Оберіть колір:</label><br>
+      <select id="color-select" onchange="changeSquareColor()" style="padding: 5px; margin-top: 5px;">
+        <option value="black">Чорний</option>
+        <option value="red">Червоний</option>
+        <option value="green">Зелений</option>
+        <option value="blue">Синій</option>
+        <option value="orange">Помаранчевий</option>
+      </select>
+    </div>
+
+    <div id="color-square" style="width: 100px; height: 100px; background-color: black; border: 1px solid #ccc;"></div>
+    
+  </div>
+</div>
+
+<script>
+  function changeSquareColor() {
+    var select = document.getElementById('color-select');
+    var square = document.getElementById('color-square');
+    square.style.backgroundColor = select.value;
+  }
+</script>
+
+<!-- Блок 2 завдання 2 -->
+<div class="task">
+  <div class="task-header">
+    <span class="task-num">04</span>
+    <span class="task-title">Координати миші та код клавіші</span>
+  </div>
+
+  <div class="demo-area" style="font-size: 1.2rem;">
+    <p>Координати миші: <span id="mouse-output" style="color: #007bff; font-weight: bold;">X: 0, Y: 0</span></p>
+    <p>Остання натиснута клавіша: <span id="key-output" style="color: #dc3545; font-weight: bold;">Жодної</span></p>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('mousemove', function(event) {
+    var output = document.getElementById('mouse-output');
+    output.textContent = 'X: ' + event.clientX + ', Y: ' + event.clientY;
+  });
+
+  document.addEventListener('keydown', function(event) {
+    var output = document.getElementById('key-output');
+    if (event.keyCode == 32) output.textContent = 'Space (код: ' + event.keyCode + ')';
+    else output.textContent = event.key + ' (код: ' + event.keyCode + ')';
+  });
+</script>
+
+<!-- Блок 2 завдання 3 -->
+<div class="task">
+  <div class="task-header">
+    <span class="task-num">07</span>
+    <span class="task-title">Розрахунок переплати по кредиту</span>
+  </div>
+
+  <div class="controls">
+    <button onclick="calculateMortgage()">Розрахувати переплату</button>
+  </div>
+
+  <div class="demo-area" id="mortgage-output">
+    Натисніть кнопку для розрахунку.
+  </div>
+</div>
+
+<script>
+  function calculateMortgage() {
+    var S = 1000000;
+    var p = 10;
+    var years = 5;
+
+    var r = (p / 100) / 12;
+    var n = years * 12;
+
+    var koef = Math.pow(1 + r, n);
+    var monthPay = S * (r * koef) / (koef - 1);
+
+    var totalPaid = monthPay * n;
+    var perepl = totalPaid - S;
+
+    var output = document.getElementById('mortgage-output');
+    output.innerHTML = 
+      "Тіло кредиту: " + S + " грн<br>" +
+      "Щомісячний платіж: " + monthPay.toFixed(2) + " грн<br>" +
+      "<strong>Переплата: " + perepl.toFixed(2) + " грн</strong>";
+  }
+</script>
+
+<!-- Блок 2 завдання 4 -->
+<div class="task">
+  <div class="task-header">
+    <span class="task-num">09</span>
+    <span class="task-title">Сортування масиву (тільки за зростом)</span>
+  </div>
+
+  <div class="controls">
+    <button onclick="runSorting()">Виконати сортування</button>
+  </div>
+
+  <div class="demo-area" id="sort-output">
+    Масив до і після сортування з'явиться тут.
+  </div>
+</div>
+
+<script>
+  var people = [
+    { name: "Max", height: 183 },
+    { name: "Charles", height: 178 },
+    { name: "Lando", height: 150 },
+    { name: "Ayrton", height: 182 }
+  ];
+
+  function sortByName(arr) {
+    return arr.sort(function(a, b) {
+      if (a.name > b.name) return 1;
+      if (a.name < b.name) return -1;
+      return 0;
+    });
+  }
+
+  function sortByHeight(arr) {
+    return arr.sort(function(a, b) {
+      return b.height - a.height; 
+    });
+  }
+
+  function runSorting() {
+    var output = document.getElementById('sort-output');
+    
+    var textOriginal = "<strong>До сортування:</strong><br>";
+    for(var i = 0; i < people.length; i++) {
+      textOriginal += people[i].name + " (" + people[i].height + " см)<br>";
+    }
+
+    var sortedPeople = sortByHeight(people);
+
+    var textSorted = "<br><strong>Після сортування за зростом (за спаданням):</strong><br>";
+    for(var j = 0; j < sortedPeople.length; j++) {
+      textSorted += sortedPeople[j].name + " (" + sortedPeople[j].height + " см)<br>";
+    }
+
+    output.innerHTML = textOriginal + textSorted;
   }
 </script>
 
