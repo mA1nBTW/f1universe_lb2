@@ -1,0 +1,116 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+h1, .subtitle {
+  text-align: center;
+}
+
+.task {
+  background: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 0 auto 30px auto;
+  max-width: 800px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.task-header {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+.task-num {
+  background: #007bff;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin-right: 10px;
+}
+
+.controls {
+  margin-bottom: 15px;
+}
+
+input, button {
+  padding: 5px 10px;
+  margin-right: 5px;
+  font-size: 1rem;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button.stop {
+  background-color: #dc3545;
+}
+
+.demo-area {
+  border: 1px dashed #aaa;
+  background: #fafafa;
+  padding: 15px;
+  min-height: 60px;
+}
+
+/* Специфичные стили для заданий */
+
+/* Задание 2 */
+#task2-area {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+#moving-img {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: #ff9900;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+}
+
+/* Задание 3 */
+#task3-area p {
+  font-size: 22px;
+  margin: 5px 0;
+}
+#task3-area p.changed {
+  color: #28a745;
+}
+
+/* Задание 4 */
+#clock-display {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Задание 5 */
+#fade-box {
+  background-color: #17a2b8;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+#fade-progress {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #666;
+}

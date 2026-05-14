@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>ЛР №3</title>
+  <link rel="stylesheet" href="/css/lb3.css">
+</head>
+<body>
+
+<h1>ЛР №3 — Блок 1</h1>
+<p class="subtitle">JavaScript</p>
+
+
+<!-- Блок 1 завдання 1 -->
+<div class="task">
+  <div class="task-header">
+    <span class="task-num">01</span>
+    <span class="task-title">Функція виведення тексту з розміром шрифту</span>
+  </div>
+
+  <div class="controls">
+    <label>Текст:</label>
+    <input type="text" id="t1-text" value="Привіт, світ!">
+    <label>Розмір (px):</label>
+    <input type="number" id="t1-size" value="24" min="8" max="80" style="width:90px">
+    <button onclick="showText()">Показати</button>
+  </div>
+
+  <div class="demo-area" id="task1-output"></div>
+</div>
+
+<script>
+  function showText(text, size) {
+    text = text || document.getElementById('t1-text').value;
+    size = size || document.getElementById('t1-size').value;
+
+    var output = document.getElementById('task1-output');
+    output.innerHTML = '';
+
+    var span = document.createElement('span');
+    span.textContent = text;
+    span.style.fontSize = size + 'px';
+
+    output.appendChild(span);
+  }
+</script>
+
+
+<!-- Блок 1 завдання 2 -->
+<div class="task">
+  <div class="task-header">
+    <span class="task-num">02</span>
+    <span class="task-title">Картинка, що щосекунди з'являється у новому місці</span>
+  </div>
+
+  <div class="controls">
+    <button onclick="startMoving()">Старт</button>
+    <button class="stop" onclick="stopMoving()">Стоп</button>
+  </div>
+
+  <div class="demo-area" id="task2-area">
+    <div id="moving-img">🏎️</div>
+  </div>
+</div>
+
+<script>
+  var moveInterval = null;
+
+  function startMoving() {
+    if (moveInterval) return;
+
+    moveInterval = setInterval(function() {
+      var area = document.getElementById('task2-area');
+      var img  = document.getElementById('moving-img');
+
+      var maxLeft = area.offsetWidth  - img.offsetWidth;
+      var maxTop  = area.offsetHeight - img.offsetHeight;
+
+      var newLeft = Math.floor(Math.random() * maxLeft);
+      var newTop  = Math.floor(Math.random() * maxTop);
+
+      img.style.left = newLeft + 'px';
+      img.style.top  = newTop  + 'px';
+    }, 1000);
+  }
+
+  function stopMoving() {
+    clearInterval(moveInterval);
+    moveInterval = null;
+  }
+</script>
+
+
+<!-- Блок 1 завдання 3 -->
+<div class="task">
+  <div class="task-header">
+    <span class="task-num">03</span>
+    <span class="task-title">Знайти всі &lt;p&gt; і змінити розмір на 15px</span>
+  </div>
+
+  <div class="controls">
+    <button onclick="changeParagraphs()">Змінити розмір усіх &lt;p&gt;</button>
+    <button class="stop" onclick="resetParagraphs()">Скинути</button>
+  </div>
+
+  <div class="demo-area" id="task3-area">
+    <p>Перший абзац — початковий розмір 22px.</p>
+    <p>Другий абзац — теж 22px за замовчуванням.</p>
+    <p>Третій абзац — 22px.</p>
+  </div>
+</div>
+
+<script>
+  function changeParagraphs() {
+    var area = document.getElementById('task3-area');
+    var paragraphs = area.getElementsByTagName('p');
+
+    for (var i = 0; i < paragraphs.length; i++) {
+      paragraphs[i].setAttribute('style', 'font-size: 15px;');
+      paragraphs[i].classList.add('changed');
+    }
+  }
+
+  function resetParagraphs() {
+    var area = document.getElementById('task3-area');
+    var paragraphs = area.getElementsByTagName('p');
+
+    for (var i = 0; i < paragraphs.length; i++) {
+      paragraphs[i].setAttribute('style', 'font-size: 22px;');
+      paragraphs[i].classList.remove('changed');
+    }
+  }
+</script>
+
+
+<!-- Блок 1 завдання 4 -->
+<div class="task">
+  <div class="task-header">
+    <span class="task-num">04</span>
+    <span class="task-title">Текстовий годинник</span>
+  </div>
+
+  <div class="controls">
+    <button onclick="startClock()">Запустити</button>
+    <button class="stop" onclick="stopClock()">Зупинити</button>
+  </div>
+
+  <div class="demo-area">
+    <div id="clock-display">--:--:--</div>
+  </div>
+</div>
+
+<script>
+  var clockInterval = null;
+
+  function updateClock() {
+    var now = new Date();
+
+    var h = now.getHours();
+    var m = now.getMinutes();
+    var s = now.getSeconds();
+
+    h = h < 10 ? '0' + h : h;
+    m = m < 10 ? '0' + m : m;
+    s = s < 10 ? '0' + s : s;
+
+    document.getElementById('clock-display').textContent = h + ':' + m + ':' + s;
+  }
+
+  function startClock() {
+    if (clockInterval) return;
+    updateClock();
+    clockInterval = setInterval(updateClock, 1000);
+  }
+
+  function stopClock() {
+    clearInterval(clockInterval);
+    clockInterval = null;
+  }
+</script>
+
+
+<!-- Блок 1 завдання 5 -->
+<div class="task">
+  <div class="task-header">
+    <span class="task-num">05</span>
+    <span class="task-title">Ефект поступового витирання блоку</span>
+  </div>
+
+  <div class="controls">
+    <button onclick="startFade()">Запустити витирання</button>
+    <button class="stop" onclick="resetFade()">Скинути</button>
+  </div>
+
+  <div class="demo-area">
+    <div id="fade-box">Цей блок поступово зникне 👻</div>
+    <div id="fade-progress">opacity: 1.00</div>
+  </div>
+</div>
+
+<script>
+  var fadeInterval = null;
+  var currentOpacity = 1;
+
+  function startFade() {
+    if (fadeInterval) return;
+
+    fadeInterval = setInterval(function() {
+      currentOpacity -= 0.05;
+
+      if (currentOpacity <= 0) {
+        currentOpacity = 0;
+        clearInterval(fadeInterval);
+        fadeInterval = null;
+      }
+
+      var box = document.getElementById('fade-box');
+      box.style.opacity = currentOpacity;
+
+      document.getElementById('fade-progress').textContent =
+        'opacity: ' + currentOpacity.toFixed(2);
+    }, 80);
+  }
+
+  function resetFade() {
+    clearInterval(fadeInterval);
+    fadeInterval = null;
+    currentOpacity = 1;
+    document.getElementById('fade-box').style.opacity = 1;
+    document.getElementById('fade-progress').textContent = 'opacity: 1.00';
+  }
+</script>
+
+</body>
+</html>
