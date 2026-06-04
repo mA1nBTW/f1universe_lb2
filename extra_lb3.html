@@ -388,5 +388,72 @@
   }
 </script>
 
+<h2 style="text-align: center; margin-top: 40px;">ЛР №3 — Блок 3</h2>
+
+<!-- Блок 3 завдання 1 -->
+<div class="task">
+  <div class="task-header">
+    <span class="task-num">04</span>
+    <span class="task-title">Пошук номера кредитної картки</span>
+  </div>
+
+  <div class="controls">
+    <button onclick="findCreditCards()">Знайти кредитки</button>
+  </div>
+
+  <div class="demo-area" id="regex-output">
+    Текст: "Іван вчора втратив свою кредитку, її номер 1178-9087-2384-8787. Тому він пішов в банк і описав ситуацію. Там пішли йому назустріч і видали нову кредитку під номером: 1103-8899-0811-1722".
+  </div>
+</div>
+
+<script>
+  function findCreditCards() {
+    var text = "Іван вчора втратив свою кредитку, її номер 1178-9087-2384-8787. Тому він пішов в банк і описав ситуацію. Там пішли йому назустріч і видали нову кредитку під номером: 1103-8899-0811-1722";
+    
+    var regex = /\d{4}-\d{4}-\d{4}-\d{4}/g;
+    var result = text.match(regex);
+    
+    var output = document.getElementById('regex-output');
+    if (!result) { 
+      output.innerHTML += "<br><br><strong style='color: #dc3545;'>Кредитки не знайдені!</strong>";
+    } else {
+      output.innerHTML += "<br><br><strong style='color: #007bff;'>Знайдені номери:</strong><br>" + result.join("<br>");
+    }
+  }
+</script>
+
+<!-- Блок 3 завдання 2 -->
+<div class="task">
+  <div class="task-header">
+    <span class="task-num">05</span>
+    <span class="task-title">Інформація про відвідувача</span>
+  </div>
+
+  <div class="controls">
+    <button onclick="showBrowserInfo()">Показати інформацію</button>
+  </div>
+
+  <div class="demo-area" id="browser-output">
+    Натисніть кнопку, щоб дізнатися, звідки ви прийшли та ваш браузер.
+  </div>
+</div>
+
+<script>
+  function showBrowserInfo() {
+    var output = document.getElementById('browser-output');
+    
+    var referrer = document.referrer;
+    if (referrer === "") {
+      referrer = "Прямий захід (або файл відкрито з комп'ютера)";
+    }
+
+    var browserVersion = navigator.userAgent;
+
+    output.innerHTML = 
+      "<strong>Звідки ви прийшли (referrer):</strong> " + referrer + "<br><br>" +
+      "<strong>Версія вашого браузера (userAgent):</strong> " + browserVersion;
+  }
+</script>
+
 </body>
 </html>

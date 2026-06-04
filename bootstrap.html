@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 Universe - Bootstrap</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+
+    <style>
+        .block-inner {
+            border-radius: 6px;
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+            padding: 16px;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        .row-1 .block-inner {
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            border-top: 3px solid #e10600;
+            color: #f0f0f0;
+        }
+
+        .row-2 .block-inner {
+            background-color: #151515;
+            border: 1px solid #444;
+            border-left: 3px solid #e10600;
+            color: #f0f0f0;
+        }
+
+        .row-3 .block-inner {
+            background-color: #1a0000;
+            border: 1px solid #5a0000;
+            border-top: 3px solid #e10600;
+            color: #f0f0f0;
+        }
+
+        .row-3 .block-inner--right {
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            border-top: 3px solid #888;
+            color: #f0f0f0;
+        }
+
+        .bs-section {
+            padding: 40px 0;
+        }
+    </style>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+    <header class="header" id="top">
+        <div class="container header__inner">
+            <div class="header__logo">
+                <a class="header__logo-link" href="index.html">F1 <span class="accent">Universe</span></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow-1">
+        <section class="bs-section">
+            <div class="container">
+
+                <h2 class="section__title">
+                    Лабораторна з <span class="accent">Bootstrap</span>
+                </h2>
+
+                <div class="row row-1 mb-4">
+                    <div class="col-4 col-lg-6 mb-3">
+                        <div class="block-inner">Блок 1.1</div>
+                    </div>
+                    <div class="col-4 col-lg-6 mb-3">
+                        <div class="block-inner">Блок 1.2</div>
+                    </div>
+                </div>
+
+                <div class="row row-2 mb-4">
+                    <div class="col-2 mb-3 d-none d-md-block">
+                        <div class="block-inner">Блок 2.1</div>
+                    </div>
+                    <div class="col-2 mb-3">
+                        <div class="block-inner">Блок 2.2</div>
+                    </div>
+                    <div class="col-2 mb-3 d-none d-md-block">
+                        <div class="block-inner">Блок 2.3</div>
+                    </div>
+                    <div class="col-2 mb-3">
+                        <div class="block-inner">Блок 2.4</div>
+                    </div>
+                    <div class="col-2 mb-3 d-none d-md-block">
+                        <div class="block-inner">Блок 2.5</div>
+                    </div>
+                    <div class="col-2 mb-3">
+                        <div class="block-inner">Блок 2.6</div>
+                    </div>
+                </div>
+
+                <div class="row row-3">
+
+                    <div class="col-3 mb-3">
+                        <div class="block-inner">Блок 3.1</div>
+                    </div>
+
+                    <div class="col-3 mb-3 d-none d-sm-block">
+                        <div class="block-inner">Блок 3.2</div>
+                    </div>
+                    <div class="col-3 d-sm-none"></div>
+
+                    <div class="col-2 mb-3">
+                        <div class="block-inner block-inner--right">Блок 3.3</div>
+                    </div>
+                    <div class="col-2 mb-3">
+                        <div class="block-inner block-inner--right">Блок 3.4</div>
+                    </div>
+                    <div class="col-2 mb-3">
+                        <div class="block-inner block-inner--right">Блок 3.5</div>
+                    </div>
+
+                </div>
+                </div></section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__col">
+                <p class="footer__brand"><strong>F1 <span class="accent">Universe</span></strong></p>
+                <address class="footer__address">
+                    <a class="footer__address-link" href="mailto:contact@f1universe.ua">contact@f1universe.ua</a><br>
+                    <a class="footer__address-link" href="tel:+380501234567">+38 (067) 167-33-67</a><br>
+                    м. Харків, Україна
+                </address>
+            </div>
+            <div class="footer__col">
+                <p class="footer__info">Лабораторна робота №4<br>
+                    <em>Гіпертекст та гіпермедіа</em><br>
+                    ХНУРЕ, 2026<br>
+                    Виконав: <strong>Павленко М. Б.</strong>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
