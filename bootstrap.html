@@ -15,13 +15,19 @@
             border-radius: 6px;
             min-height: 90px;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            font-size: 16px;
-            padding: 16px;
+            font-size: 15px;
+            padding: 16px 12px;
             font-family: 'Segoe UI', Arial, sans-serif;
+            text-align: center;
+            line-height: 1.35;
         }
+        .block-inner .stat-num { font-size: 28px; color: #e10600; margin-bottom: 4px; }
+        .block-inner .stat-label { font-size: 12px; font-weight: 400; color: #aaa; text-transform: uppercase; letter-spacing: .5px; }
+        .block-inner .team-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 6px; }
 
         .row-1 .block-inner {
             background-color: #1a1a1a;
@@ -35,6 +41,7 @@
             border: 1px solid #444;
             border-left: 3px solid #e10600;
             color: #f0f0f0;
+            font-size: 13px;
         }
 
         .row-3 .block-inner {
@@ -75,55 +82,91 @@
                     Лабораторна з <span class="accent">Bootstrap</span>
                 </h2>
 
+                <!-- Ряд 1 -->
                 <div class="row row-1 mb-4">
                     <div class="col-4 col-lg-6 mb-3">
-                        <div class="block-inner">Блок 1.1</div>
+                        <div class="block-inner">
+                            <span class="stat-num">1 103</span>
+                            <span class="stat-label">Гран-прі в історії F1</span>
+                        </div>
                     </div>
                     <div class="col-4 col-lg-6 mb-3">
-                        <div class="block-inner">Блок 1.2</div>
+                        <div class="block-inner">
+                            <span class="stat-num">75</span>
+                            <span class="stat-label">Сезонів чемпіонату</span>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Ряд 2 -->
                 <div class="row row-2 mb-4">
                     <div class="col-2 mb-3 d-none d-md-block">
-                        <div class="block-inner">Блок 2.1</div>
+                        <div class="block-inner">
+                            <span><span class="team-dot" style="background:#e10600"></span>Ferrari</span>
+                        </div>
                     </div>
                     <div class="col-2 mb-3">
-                        <div class="block-inner">Блок 2.2</div>
+                        <div class="block-inner">
+                            <span><span class="team-dot" style="background:#3671C6"></span>Red Bull</span>
+                        </div>
                     </div>
                     <div class="col-2 mb-3 d-none d-md-block">
-                        <div class="block-inner">Блок 2.3</div>
+                        <div class="block-inner">
+                            <span><span class="team-dot" style="background:#27F4D2"></span>Mercedes</span>
+                        </div>
                     </div>
                     <div class="col-2 mb-3">
-                        <div class="block-inner">Блок 2.4</div>
+                        <div class="block-inner">
+                            <span><span class="team-dot" style="background:#FF8000"></span>McLaren</span>
+                        </div>
                     </div>
                     <div class="col-2 mb-3 d-none d-md-block">
-                        <div class="block-inner">Блок 2.5</div>
+                        <div class="block-inner">
+                            <span><span class="team-dot" style="background:#0093cc"></span>Alpine</span>
+                        </div>
                     </div>
                     <div class="col-2 mb-3">
-                        <div class="block-inner">Блок 2.6</div>
+                        <div class="block-inner">
+                            <span><span class="team-dot" style="background:#64C4FF"></span>Williams</span>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Ряд 3 -->
                 <div class="row row-3">
 
                     <div class="col-3 mb-3">
-                        <div class="block-inner">Блок 3.1</div>
+                        <div class="block-inner">
+                            🏁 Монако<br>
+                            <span class="stat-label">3.337 км · 78 кіл</span>
+                        </div>
                     </div>
 
                     <div class="col-3 mb-3 d-none d-sm-block">
-                        <div class="block-inner">Блок 3.2</div>
+                        <div class="block-inner">
+                            🏁 Спа-Франкоршам<br>
+                            <span class="stat-label">7.004 км · 44 кіл</span>
+                        </div>
                     </div>
                     <div class="col-3 d-sm-none"></div>
 
                     <div class="col-2 mb-3">
-                        <div class="block-inner block-inner--right">Блок 3.3</div>
+                        <div class="block-inner block-inner--right">
+                            <span class="stat-num">375</span>
+                            <span class="stat-label">км/год макс.</span>
+                        </div>
                     </div>
                     <div class="col-2 mb-3">
-                        <div class="block-inner block-inner--right">Блок 3.4</div>
+                        <div class="block-inner block-inner--right">
+                            <span class="stat-num">5 G</span>
+                            <span class="stat-label">навантаження</span>
+                        </div>
                     </div>
                     <div class="col-2 mb-3">
-                        <div class="block-inner block-inner--right">Блок 3.5</div>
+                        <div class="block-inner block-inner--right">
+                            <span class="stat-num">1.8 с</span>
+                            <span class="stat-label">піт-стоп рекорд</span>
+                        </div>
                     </div>
 
                 </div>
